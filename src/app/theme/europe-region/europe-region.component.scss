@@ -1,5 +1,5 @@
 .container {
-  margin: 20px 0px 40px 60px;
+  margin: 35px 0px 40px 60px;
 }
 
 .country {
@@ -15,16 +15,9 @@ cursor: pointer;
 display: inline;
 }
 
-
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  margin-top: 80px;
+.currency:hover {
+  color: red;
 }
 
-.right {
-  right: 0;
-}
+
+

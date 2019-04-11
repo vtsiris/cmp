@@ -1,4 +1,4 @@
-import { Countries } from './../model/countriescurrencies.model';
+import { Countries, Currency } from './../model/countriescurrencies.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CapitalDetails } from '../model/capitaldetails.model';
@@ -11,7 +11,8 @@ export class ApiService {
 
 
 capitalCurenciesURL = 'https://restcountries.eu/rest/v2/region/europe?fields=name;capital;currencies';
-CountryDetailsURL = 'https://restcountries.eu/rest/v2/capital/';
+countryDetailsURL = 'https://restcountries.eu/rest/v2/capital/';
+currencyDetailsURL = 'https://restcountries.eu/rest/v2/currency/';
 
 constructor(private http: HttpClient) {}
 
@@ -20,7 +21,11 @@ getCountries() {
 }
 
 getCountryDetails(capitalName: string) {
-  return this.http.get<CapitalDetails[]>(this.CountryDetailsURL + capitalName);
+  return this.http.get<CapitalDetails[]>(this.countryDetailsURL + capitalName);
+}
+
+getCurrencyDetails(currencyName: string) {
+  return this.http.get<Currency[]>(this.currencyDetailsURL + currencyName + '?fields=name');
 }
 
 }

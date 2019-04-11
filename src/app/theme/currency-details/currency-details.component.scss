@@ -1,0 +1,28 @@
+.split {
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    margin-top: 80px;
+    overflow-y: scroll;
+    margin-bottom: 40px;
+  }
+
+  .right {
+    right: 0;
+  }
+
+.country:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.country-details {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: -65px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}

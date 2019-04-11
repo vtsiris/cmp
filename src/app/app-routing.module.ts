@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: 'europe-regions', component: EuropeRegionComponent, children: [
     { path: 'country-details/:capitalName', component: CountryDetailsComponent }
   ]},
-  {path: 'currencies', component: EuropeRegionComponent}
+  {path: 'currencies', component: EuropeRegionComponent},
 ];
 
 @NgModule({

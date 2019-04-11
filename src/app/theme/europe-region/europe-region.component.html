@@ -1,4 +1,4 @@
-<div class="container split left" *ngIf="currentUrl === '/europe-regions'">
+<div class="container" *ngIf="currentUrl === '/europe-regions'">
   <div class="row" *ngFor="let country of countries">
     <p class="country" [routerLink]="['/europe-regions/country-details/', country.capital]">
       {{country.name}}
@@ -8,19 +8,25 @@
     </p>
   </div>
 </div>
-<div class="container split left" *ngIf="currentUrl === '/currencies'">
-  <div class="row" *ngFor="let country of countries">
-    <!-- <p class="country" [routerLink]="['/europe-regions/country-details/', country.capital]"> -->
-      <p class="country">
-      {{country.name}}
-      <span class="capital">
-        : {{country.capital}} |
-        <span *ngFor="let currency of country.currencies; let i = index;">
-            <span *ngIf="i >= 1 && currency.code !== '(none)'">,</span> <span *ngIf="currency.code !== '(none)'">{{currency.code}}</span>
-        </span>
-      </span>
-    </p>
-  </div>
-</div>
 <router-outlet></router-outlet>
+<div *ngIf="currentUrl === '/currencies'">
 
+  <div class="container split left">
+    <div class="row" *ngFor="let country of countries">
+      <p class="country">
+        {{country.name}}
+        <span class="capital">
+          : {{country.capital}} |
+          <span *ngFor="let currency of country.currencies; let i = index;">
+            <span *ngIf="i >= 1 && currency.code !== '(none)'">,</span>
+            <span *ngIf="currency.code !== '(none)'" class="currency" (click)="getCurrencyCode(currency.code)">{{currency.code}}</span>
+          </span>
+        </span>
+      </p>
+    </div>
+  </div>
+  <app-currency-details
+  *ngIf="currencyCode"
+  [currencyCode]="currencyCode"
+  [countries]="countries"></app-currency-details>
+</div>

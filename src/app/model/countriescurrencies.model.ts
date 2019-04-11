@@ -9,3 +9,7 @@ export interface Currencies {
   name: string;
   symbol; string;
 }
+
+export interface Currency {
+  name: string;
+}

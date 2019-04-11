@@ -1,0 +1,19 @@
+<div class="split right">
+  <div class="row">
+  <div style="margin-top: -3px;" class="mat-h2 col-1">{{currencyCode}}:</div>
+  <div class="col-6" style="margin-bottom: 140px;">
+    <ul *ngFor="let country of currencyDetails; let i = index;">
+          <li class="country" (mouseenter)="getCountryInfo(country.name)" (mouseleave)="deleteCountryInfo()">
+        {{country.name}}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="countryDetails" class="col-3 country-details">
+    <img src="{{countryDetails[0].flag}}" alt="countryFlag" height="20px;" width="30px;">
+    <p> <strong> Capital:</strong> {{countryDetails[0].capital}} </p>
+          <p> <strong>Population:</strong> {{countryDetails[0].population | number:'.2'}}</p>
+          <p> <strong>Native Name:</strong> {{countryDetails[0].nativeName}}</p>
+          <p> <strong>SubRegion:</strong> {{countryDetails[0].subregion}}</p>
+  </div>
+</div>
+

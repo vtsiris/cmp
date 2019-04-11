@@ -12,12 +12,17 @@ export class EuropeRegionComponent implements OnInit {
 
   currentUrl: string;
   countries: Countries[];
+  currencyCode: string;
 
   constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.currentUrl = this.router.url;
     this.api.getCountries().subscribe(data => this.countries = data);
+  }
+
+  getCurrencyCode(_currencyCode: string) {
+    this.currencyCode = _currencyCode;
   }
 
 }

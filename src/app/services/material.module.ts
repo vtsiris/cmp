@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 
@@ -10,11 +12,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   imports: [
     CommonModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTabsModule
   ],
   exports: [
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTabsModule
   ]
 })
 export class MaterialModule { }
