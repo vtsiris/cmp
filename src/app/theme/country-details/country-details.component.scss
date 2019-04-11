@@ -1,0 +1,30 @@
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin-top: 80px;
+}
+
+.right {
+  right: 0;
+}
+
+.flag {
+  position: inherit;
+  left: 70%;
+  top: 8%;
+}
+
+.left-border {
+  border: solid 1px;
+  border-right: none;
+  background-color: #f1eeec;
+}
+
+.right-border {
+  border: solid 1px;
+  border-left: none;
+  background-color: #f1eeec;
+}

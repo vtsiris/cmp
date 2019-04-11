@@ -1,0 +1,26 @@
+<div class="container split left" *ngIf="currentUrl === '/europe-regions'">
+  <div class="row" *ngFor="let country of countries">
+    <p class="country" [routerLink]="['/europe-regions/country-details/', country.capital]">
+      {{country.name}}
+      <span class="capital">
+        : {{country.capital}}
+      </span>
+    </p>
+  </div>
+</div>
+<div class="container split left" *ngIf="currentUrl === '/currencies'">
+  <div class="row" *ngFor="let country of countries">
+    <!-- <p class="country" [routerLink]="['/europe-regions/country-details/', country.capital]"> -->
+      <p class="country">
+      {{country.name}}
+      <span class="capital">
+        : {{country.capital}} |
+        <span *ngFor="let currency of country.currencies; let i = index;">
+            <span *ngIf="i >= 1 && currency.code !== '(none)'">,</span> <span *ngIf="currency.code !== '(none)'">{{currency.code}}</span>
+        </span>
+      </span>
+    </p>
+  </div>
+</div>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,13 @@
+<div class="split right" *ngFor="let country of countryDetails">
+  <div class="row">
+        <div class="col-4 left-border">
+          <p> <strong> Capital:</strong> {{country.capital}} </p>
+          <p> <strong>Population:</strong> {{country.population | number:'.2'}}</p>
+          <p> <strong>Native Name:</strong> {{country.nativeName}}</p>
+          <p> <strong>SubRegion:</strong> {{country.subregion}}</p>
+        </div>
+        <div class="col-3 right-border">
+          <img src="{{country.flag}}" alt="country-flag" height="50px;" width="80px;" style="float: right;margin:20px 30px 0px 0px;">
+    </div>
+  </div>
+</div>
