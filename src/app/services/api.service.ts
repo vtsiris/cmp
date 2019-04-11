@@ -2,6 +2,7 @@ import { Countries, Currency } from './../model/countriescurrencies.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CapitalDetails } from '../model/capitaldetails.model';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -27,5 +28,6 @@ getCountryDetails(capitalName: string) {
 getCurrencyDetails(currencyName: string) {
   return this.http.get<Currency[]>(this.currencyDetailsURL + currencyName + '?fields=name');
 }
+
 
 }
