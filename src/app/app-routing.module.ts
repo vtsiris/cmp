@@ -6,7 +6,6 @@ import { CountryDetailsComponent } from './theme/country-details/country-details
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
   {path: 'europe-regions', component: EuropeRegionComponent, children: [
     { path: 'country-details/:capitalName', canActivate: [AuthGuardService], component: CountryDetailsComponent }
   ]},

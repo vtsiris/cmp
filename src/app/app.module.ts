@@ -10,6 +10,7 @@ import { NavbarComponent } from './theme/navbar/navbar.component';
 import { EuropeRegionComponent } from './theme/europe-region/europe-region.component';
 import { CountryDetailsComponent } from './theme/country-details/country-details.component';
 import { CurrencyDetailsComponent } from './theme/currency-details/currency-details.component';
+import { FunnyAnimationComponent } from './theme/funny-animation/funny-animation.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CurrencyDetailsComponent } from './theme/currency-details/currency-deta
     NavbarComponent,
     EuropeRegionComponent,
     CountryDetailsComponent,
-    CurrencyDetailsComponent
+    CurrencyDetailsComponent,
+    FunnyAnimationComponent
   ],
   imports: [
     BrowserModule,
